@@ -52,3 +52,53 @@
 //   }
 // }
 //filterUsersByRole(users)
+
+//-------------------------------------------------------------------------------------------------------
+
+// interface Product {
+//   id: number;
+//   name: string;
+//   price: number;
+//   category: string;
+// }
+
+// const products: Product[]=[
+//   {
+//     id: 4,
+//     name: 'test',
+//     price: 5,
+//     category: 'string',
+//   },
+//     {
+//     id: 5,
+//     name: 'test5',
+//     price: 5,
+//     category: 'string',
+//   }
+// ]
+
+// function findProductId(id: number):any
+  
+// function findProductId(
+//   id: number,
+//   name?: string,
+//   price?: number,
+//   category?: string,){
+ 
+//   return   products.filter(product => product.id === id)
+//   }
+
+// console.log(findProductId(5))
+
+
+// function findProductName(name: string):any
+  
+// function findProductName(
+//   name: string,
+//   price?: number,
+//   category?: string,){
+ 
+//   return   products.filter(product => product.name === name)
+//   }
+
+// console.log(findProductName('test'))

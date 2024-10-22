@@ -31,7 +31,6 @@
 //     Guest,
 // }
 
-
 // const users: User[] = [
 //    createUser(1, "Alice", "alice@example.ru"),
 //   createUser(2, "Bob", "bob@example.ru"),
@@ -48,7 +47,67 @@
 //   let arr = [];
 //   for (let i in array) {
 //     console.log(i)
-   
+
 //   }
 // }
 //filterUsersByRole(users)
+//-----------------------------------------------------------------------------------
+
+function printInfo(value: string | number) {
+  if (typeof value === 'string') {
+    console.log(value.length)
+  } else {
+    console.log(value * value)
+  }
+}
+//----------------------------------------
+interface Dog {
+  name: string
+  bark(): string
+}
+
+interface Cat {
+  name: string
+  meow(): string
+}
+
+function makeSound(animal: Dog | Cat) {
+  if ('bark' in animal) {
+    return animal.bark()
+  }
+  return animal.meow()
+}
+
+const dog: Dog = {
+  name: 'Dog1',
+  bark(): string {
+    return 'Woow!'
+  },
+}
+
+const cat: Cat = {
+  name: 'Whiskers',
+  meow: () => 'Meow!',
+}
+
+function isDog(animal: any): animal is Dog {
+  return (animal as Dog).bark !== undefined
+}
+function isCat(animal: any): animal is Cat {
+  return (animal as Cat).meow !== undefined
+}
+
+function playWithPet(pet: Dog | Cat) {
+  if (isDog(pet)) {
+    return pet.bark()
+  } else {
+    return pet.meow()
+  }
+}
+
+console.log(makeSound(dog))
+console.log(makeSound(cat))
+printInfo('test')
+printInfo(4)
+console.log(playWithPet(dog))
+playWithPet(cat)
